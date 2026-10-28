@@ -7,7 +7,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Configuration;
-using Microsoft.ApplicationBlocks.Data;
 using System.Globalization;
 
 namespace Appointment_booking.Pages.User
