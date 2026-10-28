@@ -1,0 +1,273 @@
+﻿/*.appointment-card {
+    border-radius: 14px;
+    border: 1px solid #e9ecef;
+    transition: box-shadow .2s ease, transform .2s ease;
+}
+
+    .appointment-card:hover {
+        box-shadow: 0 .5rem 1.25rem rgba(0,0,0,.08);
+        transform: translateY(-2px);
+    }
+
+    .appointment-card .card-body {
+        padding: 1.1rem 1.4rem;
+    }
+
+.service-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: #e7f1ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0d6efd;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.badge-status {
+    font-size: .8rem;
+    padding: .45em .8em;
+    border-radius: 50px;
+}
+
+.slot-btn {
+    min-width: 84px;
+    margin: 4px;
+}
+
+    .slot-btn.active {
+        background-color: #0d6efd !important;
+        color: #fff !important;
+        border-color: #0d6efd !important;
+    }
+
+.empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #8a8f98;
+}
+
+    .empty-state i {
+        font-size: 2.5rem;
+        display: block;
+        margin-bottom: .75rem;
+    }
+
+#pnlEdit {
+    border-radius: 16px;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #0d6efd;
+}
+*/
+
+
+/* ===== Main Layout ===== */
+
+.container {
+    color: #fff;
+}
+
+/* ===== Top Section ===== */
+
+.btn-gold {
+    background: #D4AF37;
+    color: #111827;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+    .btn-gold:hover {
+        background: #c49b22;
+        color: #111827;
+    }
+
+.alert {
+    border-radius: 14px;
+}
+
+/* ===== Tabs ===== */
+
+.barber-tabs .nav-link {
+    background: #111827;
+    color: #9ca3af;
+    border-radius: 12px;
+    margin-left: 8px;
+    border: 1px solid rgba(212,175,55,.08);
+    transition: .3s;
+}
+
+    .barber-tabs .nav-link.active {
+        background: #D4AF37 !important;
+        color: #111827 !important;
+    }
+
+/* ===== Empty State ===== */
+
+.empty-state {
+    background: #111827;
+    border: 1px dashed rgba(212,175,55,.15);
+    border-radius: 18px;
+    padding: 45px;
+    text-align: center;
+    color: #9ca3af;
+}
+
+    .empty-state i {
+        font-size: 40px;
+        display: block;
+        margin-bottom: 15px;
+        color: #D4AF37;
+    }
+
+/* ===== Appointment Cards ===== */
+
+.card.appointment-card.barber-card {
+    background: #111827 !important;
+    border: 1px solid rgba(212,175,55,.12) !important;
+    border-radius: 18px;
+    transition: .3s;
+}
+
+    .card.appointment-card.barber-card:hover {
+        border-color: #D4AF37 !important;
+        transform: translateY(-3px);
+    }
+
+    .card.appointment-card.barber-card .card-body {
+        color: #fff !important;
+    }
+
+    .card.appointment-card.barber-card .fw-bold {
+        color: #fff !important;
+    }
+
+    .card.appointment-card.barber-card .text-muted,
+    .card.appointment-card.barber-card .small {
+        color: #9ca3af !important;
+    }
+
+/* ===== Service Icon ===== */
+
+.service-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 14px;
+    background: rgba(212,175,55,.12);
+    color: #D4AF37;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+/* ===== Status Badge ===== */
+
+.badge-status {
+    padding: 10px 14px;
+    border-radius: 30px;
+    font-size: 13px;
+}
+
+/* ===== Buttons (Edit + Cancel Unified) ===== */
+
+.btn-outline-gold {
+    border: 1px solid #D4AF37;
+    color: #D4AF37;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+    .btn-outline-gold:hover {
+        background: #D4AF37;
+        color: #111827;
+    }
+
+.btn-outline-danger {
+    border: 1px solid #dc3545 !important;
+    color: #dc3545 !important;
+    border-radius: 10px !important;
+    transition: .3s !important;
+}
+
+.btn-outline-gold:hover {
+    background: #D4AF37;
+    color: #111827;
+}
+
+/* اگر خواستی حذف هم دقیقاً مثل ویرایش بشه */
+.btn-outline-danger {
+    border: 1px solid #dc3545 !important;
+    color: #dc3545 !important;
+    background: transparent !important;
+}
+
+    .btn-outline-danger:hover {
+        background: #dc3545 !important;
+        color: #111827 !important;
+    }
+
+/* ===== Edit Panel ===== */
+
+.barber-edit-panel {
+    background: #111827;
+    border: 1px solid rgba(212,175,55,.15);
+    border-radius: 18px;
+}
+
+    .barber-edit-panel .card-body {
+        color: #fff;
+    }
+
+/* ===== Inputs ===== */
+
+.custom-input {
+    background: #0f172a;
+    border: 1px solid rgba(212,175,55,.12);
+    color: white;
+    border-radius: 12px;
+}
+
+    .custom-input:focus {
+        border-color: #D4AF37;
+        box-shadow: none;
+        background: #0f172a;
+        color: white;
+    }
+
+/* ===== Slots ===== */
+
+.slot-btn {
+    margin: 5px;
+    border-radius: 10px;
+    min-width: 90px;
+}
+
+    .slot-btn.btn-outline-primary {
+        border-color: #D4AF37;
+        color: #D4AF37;
+    }
+
+        .slot-btn.btn-outline-primary:hover {
+            background: #D4AF37;
+            color: #111827;
+        }
+
+/* ===== Responsive ===== */
+
+@media (max-width: 768px) {
+    .appointment-card .card-body {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+
+    .service-icon {
+        width: 45px;
+        height: 45px;
+    }
+}

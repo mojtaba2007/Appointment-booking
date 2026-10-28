@@ -1,0 +1,16 @@
+﻿.custom-input {
+    height: 50px;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+}
+
+    .custom-input:focus {
+        box-shadow: none;
+        border-color: #6c63ff;
+    }
+
+.profile-avatar {
+    border: 4px solid #f3f4f6;
+    object-fit: cover;
+}

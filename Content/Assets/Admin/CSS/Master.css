@@ -1,0 +1,388 @@
+﻿/* ─── Base ──────────────────────────────────── */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Vazirmatn', sans-serif;
+    background: #f0f2f5;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ─── Sidebar ───────────────────────────────── */
+#adminSidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 60%, #0f172a 100%);
+    z-index: 1100;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: width .28s cubic-bezier(.4,0,.2,1);
+    box-shadow: -4px 0 24px rgba(0,0,0,.35);
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,.08) transparent;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ─── Brand ─────────────────────────────────── */
+.sb-brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 18px 16px 16px;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    flex-shrink: 0;
+}
+
+.sb-brand-icon {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(99,102,241,.45);
+    flex-shrink: 0;
+}
+
+.sb-brand-text {
+    overflow: hidden;
+}
+
+.sb-brand-title {
+    color: #f1f5f9;
+    font-size: .88rem;
+    font-weight: 700;
+    white-space: nowrap;
+    line-height: 1.3;
+}
+
+.sb-brand-sub {
+    color: rgba(255,255,255,.35);
+    font-size: .68rem;
+    white-space: nowrap;
+}
+
+/* ─── Nav sections ──────────────────────────── */
+.sb-section {
+    padding: 14px 14px 4px;
+    font-size: .62rem;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    color: rgba(255,255,255,.22);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.sb-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .sb-nav li a {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        padding: 10px 14px;
+        color: rgba(255,255,255,.58);
+        text-decoration: none;
+        font-size: .84rem;
+        white-space: nowrap;
+        position: relative;
+        transition: color .18s, background .18s;
+        border-radius: 0;
+    }
+
+        .sb-nav li a:hover {
+            color: rgba(255,255,255,.92);
+            background: rgba(255,255,255,.07);
+        }
+
+        .sb-nav li a.active {
+            color: #fff;
+            background: rgba(99,102,241,.22);
+        }
+
+            .sb-nav li a.active::after {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 6px;
+                bottom: 6px;
+                width: 3px;
+                background: linear-gradient(180deg, #6366f1, #8b5cf6);
+                border-radius: 2px 0 0 2px;
+            }
+
+        .sb-nav li a i {
+            font-size: 1rem;
+            min-width: 20px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+.sb-nav-label {
+    transition: opacity .2s;
+}
+
+.sb-divider {
+    border-color: rgba(255,255,255,.06);
+    margin: 8px 14px;
+}
+
+.sb-logout-link {
+    color: rgba(248,113,113,.75) !important;
+}
+
+    .sb-logout-link:hover {
+        color: rgba(248,113,113,1) !important;
+        background: rgba(248,113,113,.1) !important;
+    }
+
+/* ─── Spacer pushes bottom items down ───────── */
+.sb-spacer {
+    flex: 1;
+}
+
+/* ─── Topbar ────────────────────────────────── */
+#adminTopbar {
+    position: fixed;
+    top: 0;
+    right: 250px;
+    left: 0;
+    height: 60px;
+    background: #fff;
+    border-bottom: 1px solid #e8ecf0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    justify-content: space-between;
+    box-shadow: 0 2px 10px rgba(0,0,0,.05);
+    transition: right .28s cubic-bezier(.4,0,.2,1);
+}
+
+.tb-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#sbToggleBtn {
+    background: #f5f7fa;
+    border: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #64748b;
+    transition: background .18s;
+    flex-shrink: 0;
+}
+
+    #sbToggleBtn:hover {
+        background: #e8edf3;
+        color: #334155;
+    }
+
+.tb-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #94a3b8;
+    font-size: .82rem;
+}
+
+    .tb-breadcrumb .tb-page {
+        color: #1e293b;
+        font-weight: 600;
+        font-size: .86rem;
+    }
+
+.tb-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tb-admin-wrap {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.tb-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: .9rem;
+    flex-shrink: 0;
+}
+
+.tb-admin-name {
+    font-size: .83rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.tb-admin-role {
+    font-size: .68rem;
+    color: #94a3b8;
+}
+
+/* ─── Page Content ───────────────────────────── */
+#pageContent {
+    margin-right: 250px;
+    padding-top: 60px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: margin-right .28s cubic-bezier(.4,0,.2,1);
+}
+
+.content-inner {
+    flex: 1;
+    padding: 22px 24px;
+}
+
+.admin-footer {
+    background: #fff;
+    border-top: 1px solid #e8ecf0;
+    padding: 13px 24px;
+    text-align: center;
+    color: #94a3b8;
+    font-size: .74rem;
+}
+
+/* ─── Collapsed state ────────────────────────── */
+body.sb-collapsed #adminSidebar {
+    width: 62px;
+}
+
+body.sb-collapsed #adminTopbar {
+    right: 62px;
+}
+
+body.sb-collapsed #pageContent {
+    margin-right: 62px;
+}
+
+body.sb-collapsed .sb-section {
+    opacity: 0;
+    pointer-events: none;
+}
+
+body.sb-collapsed .sb-nav-label {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+}
+
+body.sb-collapsed .sb-brand-text {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+}
+
+body.sb-collapsed .sb-divider {
+    margin: 8px 8px;
+}
+
+body.sb-collapsed .sb-nav li a {
+    padding: 10px;
+    justify-content: center;
+}
+
+    body.sb-collapsed .sb-nav li a.active::after {
+        display: none;
+    }
+
+body.sb-collapsed .sb-brand {
+    padding: 18px 12px 16px;
+    justify-content: center;
+}
+
+/* ─── Mobile ─────────────────────────────────── */
+.sb-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.55);
+    z-index: 1050;
+    backdrop-filter: blur(2px);
+}
+
+    .sb-overlay.active {
+        display: block;
+    }
+
+@media (max-width: 992px) {
+    #adminSidebar {
+        width: 0 !important;
+        overflow: hidden;
+    }
+
+        #adminSidebar.mobile-open {
+            width: 250px !important;
+            overflow-y: auto;
+        }
+
+    #adminTopbar {
+        right: 0 !important;
+    }
+
+    #pageContent {
+        margin-right: 0 !important;
+    }
+
+    body.sb-collapsed #adminSidebar {
+        width: 0 !important;
+    }
+
+    body.sb-collapsed #adminTopbar {
+        right: 0 !important;
+    }
+
+    body.sb-collapsed #pageContent {
+        margin-right: 0 !important;
+    }
+}
+
+/* ─── Utility overrides ──────────────────────── */
+.card {
+    border-radius: 12px !important;
+}
+
+.table th {
+    font-size: .78rem;
+    font-weight: 600;
+}
+
+.table td {
+    font-size: .83rem;
+    vertical-align: middle;
+}
+
+.badge {
+    font-size: .72rem;
+    font-weight: 500;
+}

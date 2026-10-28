@@ -1,0 +1,129 @@
+﻿.booking-wrapper {
+    max-width: 900px;
+    margin: auto;
+}
+
+.glass-card {
+    background: rgba(20,20,20,.9);
+    border: 1px solid rgba(212,175,55,.25);
+    border-radius: 18px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 20px rgba(212,175,55,.08);
+    overflow: hidden;
+}
+
+.card-header-custom {
+    background: rgba(212,175,55,.08);
+    border-bottom: 1px solid rgba(212,175,55,.15);
+    padding: 18px 22px;
+}
+
+.card-title-custom {
+    color: #d4af37;
+    font-weight: 700;
+    margin: 0;
+}
+
+.form-label {
+    color: #cfcfcf !important;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.custom-input,
+.form-select {
+    background: #15181d !important;
+    border: 1px solid #2a2f36 !important;
+    color: white !important;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+    .custom-input:focus,
+    .form-select:focus {
+        border-color: #d4af37 !important;
+        box-shadow: 0 0 0 3px rgba(212,175,55,.15) !important;
+    }
+
+.input-group-text {
+    background: #15181d !important;
+    border: 1px solid #2a2f36 !important;
+    color: #d4af37 !important;
+}
+
+.btn-gold {
+    background: linear-gradient(135deg,#d4af37,#b99120);
+    border: none;
+    color: #111;
+    font-weight: 600;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.steps {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.step {
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    border-radius: 12px;
+    background: #15181d;
+    color: #aaa;
+    border: 1px solid #2a2f36;
+}
+
+    .step.active {
+        border-color: #d4af37;
+        color: #d4af37;
+    }
+
+    .step.done {
+        background: rgba(212,175,55,.08);
+        color: #d4af37;
+    }
+
+.slot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(110px,1fr));
+    gap: 12px;
+}
+
+.slot-btn {
+    background: #15181d;
+    color: white;
+    border: 1px solid #2a2f36;
+    border-radius: 12px;
+    padding: 12px;
+    transition: .2s;
+}
+
+    .slot-btn:hover {
+        border-color: #d4af37;
+    }
+
+    .slot-btn.selected {
+        background: #d4af37;
+        color: #111;
+        font-weight: bold;
+    }
+
+    .slot-btn.taken {
+        opacity: .4;
+        cursor: not-allowed;
+    }
+
+#summaryBox {
+    background: rgba(212,175,55,.05);
+    border: 1px solid rgba(212,175,55,.12);
+    border-radius: 14px;
+    padding: 20px;
+}
+
+.fw-semibold {
+    color: #cfcfcf;
+}

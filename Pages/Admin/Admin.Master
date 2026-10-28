@@ -1,0 +1,158 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.Master.cs" Inherits="Appointment_booking.Pages.Admin.Site1" %>
+
+<!DOCTYPE html>
+
+<html lang="fa" dir="rtl">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>پنل مدیریت — سامانه نوبت‌دهی</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link href="../../Content/Assets/Admin/CSS/Master.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+
+        <%-- Mobile overlay --%>
+        <div class="sb-overlay" id="sbOverlay" onclick="closeMobileSidebar()"></div>
+
+        <%-- ══════════════ TOPBAR ══════════════ --%>
+        <div id="adminTopbar">
+            <div class="tb-left">
+                <button id="sbToggleBtn" onclick="toggleSidebar(); return false;" title="بستن/باز کردن منو">
+                    <i class="bi bi-list"></i>
+                </button>
+                <div class="tb-breadcrumb">
+                    <i class="bi bi-house" style="font-size: .75rem;"></i>
+                    <i class="bi bi-chevron-left" style="font-size: .62rem;"></i>
+                    <span class="tb-page">
+                        <asp:Literal ID="litPageTitle" runat="server" Text="داشبورد" />
+                    </span>
+                </div>
+            </div>
+            <div class="tb-right">
+                <div class="tb-admin-wrap d-none d-sm-flex">
+                    <div>
+                        <div class="tb-admin-name text-end">
+                            <asp:Literal ID="litAdminName" runat="server" />
+                        </div>
+                        <div class="tb-admin-role text-end">مدیر سیستم</div>
+                    </div>
+
+                    <a href="<%=ResolveUrl("~/Pages/Admin/Profile.aspx")%>" id="headProf" title="پروفایل">
+                        <div class="tb-avatar">
+                            <i class="bi bi-person-fill"></i>
+                        </div>
+                    </a>
+                </div>
+
+                <a href="<%=ResolveUrl("~/Pages/User/Logout.aspx")%>"
+                    class="btn btn-sm btn-outline-danger px-3" title="خروج">
+                    <i class="bi bi-box-arrow-left"></i>
+                </a>
+            </div>
+        </div>
+
+
+        <%-- ══════════════ SIDEBAR ══════════════ --%>
+        <nav id="adminSidebar">
+
+            <div class="sb-brand">
+                <div class="sb-brand-icon">
+                    <i class="bi bi-calendar2-heart"></i>
+                </div>
+                <div class="sb-brand-text">
+                    <div class="sb-brand-title">نوبت‌دهی آنلاین</div>
+                    <div class="sb-brand-sub">پنل مدیریت</div>
+                </div>
+            </div>
+
+            <div class="sb-section">منوی اصلی</div>
+            <ul class="sb-nav">
+                <li>
+                    <a href="<%=ResolveUrl("~/Pages/Admin/Dashboard.aspx")%>" class="headprof" title="داشبورد">
+                        <i class="bi bi-grid-1x2-fill"></i>
+                        <span class="sb-nav-label">داشبورد</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="sb-section">مدیریت</div>
+            <ul class="sb-nav">
+                <li>
+                    <a href="<%=ResolveUrl("~/Pages/Admin/ManageAppointments.aspx")%>" id="navAppt" title="نوبت‌ها">
+                        <i class="bi bi-calendar-check-fill"></i>
+                        <span class="sb-nav-label">مدیریت نوبت‌ها</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="<%=ResolveUrl("~/Pages/Admin/ManageServices.aspx")%>" id="navSvc" title="سرویس‌ها">
+                        <i class="bi bi-scissors"></i>
+                        <span class="sb-nav-label">مدیریت سرویس‌ها</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="<%=ResolveUrl("~/Pages/Admin/ManageUsers.aspx")%>" id="navUsr" title="کاربران">
+                        <i class="bi bi-people-fill"></i>
+                        <span class="sb-nav-label">مدیریت کاربران</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="<%=ResolveUrl("~/Pages/Admin/Profile.aspx")%>" id="navProf" title="پروفایل">
+                        <i class="bi bi-person-fill"></i>
+                        <span class="sb-nav-label">پروفایل ادمین</span>
+                    </a>
+                </li>
+            </ul>
+
+            <hr class="sb-divider" />
+
+            <ul class="sb-nav">
+                <li>
+                    <a href="<%=ResolveUrl("~/Pages/User/Default.aspx")%>" title="مشاهده سایت">
+                        <i class="bi bi-house-door-fill"></i>
+                        <span class="sb-nav-label">مشاهده سایت</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="<%=ResolveUrl("~/Pages/User/Logout.aspx")%>" class="sb-logout-link" title="خروج">
+                        <i class="bi bi-box-arrow-left"></i>
+                        <span class="sb-nav-label">خروج از سیستم</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="sb-spacer"></div>
+
+        </nav>
+        <%-- /sidebar --%>
+
+
+        <%-- ══════════════ MAIN CONTENT ══════════════ --%>
+        <div id="pageContent">
+            <div class="content-inner">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+            </div>
+            <div class="admin-footer">
+                &copy; 1405 &nbsp;|&nbsp; سامانه مدیریت نوبت‌دهی
+       
+            </div>
+        </div>
+
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../../Content/Assets/Admin/JS/Master.js"></script>
+
+    <asp:ContentPlaceHolder ID="Scripts" runat="server"></asp:ContentPlaceHolder>
+</body>
+</html>

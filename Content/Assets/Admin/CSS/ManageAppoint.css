@@ -1,0 +1,171 @@
+﻿/* ================================================================
+   ManageAppointments.css
+   Consistent with Admin Master design language
+   ================================================================ */
+
+/* ── Stat Cards ─────────────────────────────────────────────── */
+.card-stat {
+    border-radius: 14px;
+    border: 1px solid #f0f0f4;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .055);
+    transition: box-shadow .2s, transform .2s;
+}
+
+    .card-stat:hover {
+        box-shadow: 0 4px 16px rgba(0, 0, 0, .08);
+        transform: translateY(-1px);
+    }
+
+.appt-stat-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.stat-label {
+    font-size: .76rem;
+}
+
+/* ── User Avatar in Table ────────────────────────────────────── */
+.appt-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .82rem;
+    font-weight: 600;
+}
+
+/* ── Filter Card ─────────────────────────────────────────────── */
+.filter-card {
+    border-radius: 14px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .04);
+}
+
+/* ── Grid Card ───────────────────────────────────────────────── */
+.grid-card {
+    border-radius: 14px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, .055);
+    overflow: hidden;
+}
+
+    .grid-card .card-header {
+        background: #fafbfc;
+        border-bottom: 1px solid #e9ecef;
+    }
+
+.tbl-header th {
+    font-size: .75rem;
+    font-weight: 600;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    padding: .9rem 1rem;
+    border-bottom: 2px solid #eef0f3 !important;
+    background: #fafbfc;
+}
+
+.grid-card .table td {
+    padding: .78rem 1rem;
+    vertical-align: middle;
+    font-size: .875rem;
+    border-color: #f3f4f8;
+}
+
+.grid-card .table tbody tr {
+    transition: background .12s;
+}
+
+    .grid-card .table tbody tr:hover {
+        background-color: #f8f9ff;
+    }
+
+/* ── Table Action Buttons ────────────────────────────────────── */
+.tbl-action {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: .78rem;
+    transition: all .14s;
+}
+
+    .tbl-action:hover {
+        transform: scale(1.08);
+    }
+
+/* ── Badges ──────────────────────────────────────────────────── */
+.badge-sm {
+    font-size: .7rem;
+    padding: .3em .65em;
+}
+
+.badge-xs {
+    font-size: .65rem;
+    padding: .25em .55em;
+}
+
+/* ── Status Flow Hint ────────────────────────────────────────── */
+.status-flow-hint {
+    background: #f8f9fc;
+    border-radius: 8px;
+    padding: .5rem .75rem;
+}
+
+/* ── Detail Modal ────────────────────────────────────────────── */
+.modal-content {
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.detail-info-block {
+    background: #f8f9fc;
+    border: 1px solid #eef0f4;
+    border-radius: 12px;
+    padding: 1rem 1.1rem;
+    height: 100%;
+}
+
+.detail-info-label {
+    font-size: .7rem;
+    color: #868e96;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin-bottom: .65rem;
+}
+
+    .detail-info-label i {
+        margin-left: .25rem;
+    }
+
+.detail-info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: .5rem;
+    font-size: .86rem;
+    margin-bottom: .45rem;
+    line-height: 1.4;
+}
+
+    .detail-info-row:last-child {
+        margin-bottom: 0;
+    }
+
+    .detail-info-row > i {
+        margin-top: .12rem;
+        width: 16px;
+        flex-shrink: 0;
+        font-size: .85rem;
+    }
